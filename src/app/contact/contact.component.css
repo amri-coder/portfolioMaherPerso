@@ -1,0 +1,25 @@
+a {
+  border: 2px solid black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.fa-phone,
+.fa-map-marker-alt,
+.fa-envelope {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+span {
+  color: red;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  border: 1px solid blue;
+}
+
+button:hover {
+  border: 1px solid green;
+}

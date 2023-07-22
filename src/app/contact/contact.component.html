@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./contact.component.css">
+  <title>Contact</title>
+</head>
+
+<body>
+
+
+  <!--Section: Contact v.2-->
+  <section class="container">
+    <div class="jumbotron text-center">
+      <h2 class="display-4">Contact !</h2>
+    </div>
+
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto lead">Avez-vous des questions ? N'hésitez pas à me contacter.</p>
+
+    <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg }}</div>
+    <div *ngIf="successMsg" class="alert alert-success">{{ successMsg }}</div>
+
+    <div class="row">
+
+      <!--Grid column-->
+      <div class="col-md-9 mb-md-0 mb-5">
+        <form id="contact-form" name="contact-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+
+          <!--Grid row-->
+          <div class="row">
+
+            <!--Grid column-->
+            <div class="row-md-6">
+              <div class="md-form mb-0">
+                <label for="name" class="lead form-label">Nom <span>*</span></label>
+                <input type="text" id="name" name="name" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid': (f.name.invalid && submitted)||(f.name.touched && f.name.invalid), 'is-valid':(f.name.valid && submitted)||(f.name.touched && f.name.valid)
+                  }" />
+
+                <div *ngIf="submitted || f.name.touched" class="invalid-feedback">
+
+                  <div *ngIf="f.name.errors?.['required']">
+                    Ce champs est requis !
+                  </div>
+
+                  <div *ngIf="f.name.errors?.['minlength'] || f.name.errors?.['pattern']">
+                    Ce champ est requis ! Minimum 3 caractères, seulement des lettres.
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="row-md-6">
+              <div class="md-form mb-0">
+                <label for="email" class="lead">E-mail <span>*</span></label>
+                <input type="text" id="email" name="email" class="form-control" formControlName="email"
+                  [ngClass]="{ 'is-invalid': (f.email.invalid && submitted)||(f.email.touched && f.email.invalid),'is-valid': (f.email.valid && submitted)||(f.email.touched && f.email.valid) }">
+
+                <!-- Message d'erreur  -->
+                <div *ngIf="f.email.touched || submitted" class="invalid-feedback">
+                  <div *ngIf=" f.email.errors?.['required']">
+                    Ce champs est requis !
+                  </div>
+                  <div *ngIf="f.email.errors?.['pattern']">
+                    Veuillez vérifier le format de l'e-mail !
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Grid column-->
+
+
+
+            <!--Grid row-->
+
+            <!--Grid row-->
+
+            <div class="row-md-6">
+              <div class="md-form mb-0">
+                <label for="subject" class="lead">Sujet</label>
+                <input type="text" id="subject" name="subject" class="form-control">
+              </div>
+            </div>
+
+            <!--Grid row-->
+
+            <!--Grid row-->
+
+
+            <!--Grid column-->
+            <div class="row-md-6">
+
+              <div class="md-form">
+                <label for="message" class="lead">Message <span>*</span></label>
+                <textarea type="text" id="message" name="message" rows="2" class="form-control"
+                  formControlName="message"
+                  [ngClass]="{ 'is-invalid': (f.message.invalid && submitted)||(f.message.touched && f.message.invalid), 'is-valid':(f.message.valid && submitted)||(f.message.valid && f.message.touched) }">
+                  </textarea>
+
+
+                <!-- Message d'erreur  -->
+                <div *ngIf="submitted || f.message.touched" class="invalid-feedback">
+                  <div *ngIf="f.message.errors?.['required']">
+                    Ce champs est requis !
+                  </div>
+                  <div *ngIf="f.message.errors?.['minlength']">
+                    Ce champ est requis ! Minimum 3 caractères !
+                  </div>
+
+
+
+                </div>
+
+
+
+              </div>
+
+
+            </div>
+          </div>
+
+
+          <!--Grid row-->
+
+          <br />
+          <br />
+          <div class="text-center text-md-left">
+            <button class="btn btn-floating lead" type="submit">Envoyer !</button>
+          </div>
+        </form>
+
+
+
+
+        <!--Grid column-->
+
+
+      </div>
+      <!--Grid column-->
+      <div class="col-md-3 text-center">
+        <ul class="list-unstyled mb-0">
+          <li><i class="fas fa-map-marker-alt fa-2x"></i>
+            <p class="lead">Rueil Malmaison, 92500, IDF, France</p>
+          </li>
+
+          <li><i class="fas fa-phone mt-4 fa-2x"></i>
+            <p class="lead">06.52.96.02.44</p>
+          </li>
+
+          <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+            <p class="lead">amri.maher@yahoo.com</p>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+
+    </div>
+
+  </section>
+  <!--Section: Contact v.2-->
+
+
+</body>
+
+</html>
