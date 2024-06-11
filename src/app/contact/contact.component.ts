@@ -54,4 +54,8 @@ export class ContactComponent implements OnInit {
         'Le formulaire est invalide. Veuillez remplir correctement les champs.';
     }
   }
+  onReset() {
+    this.errorMsg = '';
+    this.successMsg = '';
+  }
 }
