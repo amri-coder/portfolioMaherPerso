@@ -1,0 +1,27 @@
+{
+  "Technologies": [
+    "HTML 5",
+    "CSS 3",
+    "BOOTSTRAP",
+    "JAVASCRIPT",
+    "TYPESCRIPT",
+    "ANGULAR",
+    "API",
+    "JAva",
+    "Spring Boot"
+  ],
+  "DB":[
+    "MySQL",
+    "Postgres"
+  ],
+  "Versioning":[
+    "Github",
+    "Gitlab"
+  ],
+  "Conteneurs":[
+    "Docker"
+  ],
+  "Execution":[
+    "kubernates"
+  ]
+}
